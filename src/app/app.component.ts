@@ -14,11 +14,12 @@ export class AppComponent implements OnInit {
 
   constructor(private appService: appService) { }
   public searchSong(){
-    this.search;
+    console.log(this.search);
+    this.ngOnInit();
   }
 ngOnInit(){
   this.appService.getData(this.search).subscribe(
-      data => {this.songs = data, console.log(this.search)},
+      data => this.songs = data,
   );
 }
 
