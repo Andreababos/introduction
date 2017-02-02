@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<ng-container>
+  <div>
+    <label>Song: </label>
+    <input [(ngModel)]="search"  placeholder="song" name="search"/>
+    <button (click)="searchSong()">Search</button>
+  </div>
+</ng-container>
+<ng-container>
+  <ul>
+    <li *ngFor="let song of songs">{{song.artist}}: {{song.name}}</li>
+  </ul>
+
+
+</ng-container>
