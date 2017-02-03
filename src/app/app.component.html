@@ -9,7 +9,7 @@
 <ng-container>
   <ul>
     <li *ngFor="let song of songs">
-      <a routerLink="/2.0/?method=track.getInfo&api_key=7fe1ce53531d0d3549c73fdc310d0220&mbid=32ca187e-ee25-4f18-b7d0-3b6713f24635&format=json" routerLinkActive="active">{{song.artist}}: {{song.name}}</a>
+      <a routerLink="/detail/{{song.mbid}}" routerLinkActive="active">{{song.artist}}:{{song.name}}</a>
     </li>
   </ul>
 
