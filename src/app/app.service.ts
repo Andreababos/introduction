@@ -13,4 +13,8 @@ export class appService {
         return this.http.get('http://ws.audioscrobbler.com/2.0/?method=track.search&track='+search+'&api_key=7fe1ce53531d0d3549c73fdc310d0220&format=json')
             .map(res => res.json().results.trackmatches.track as Songs[]);
     }
+    public getSong(id: string) {
+        return this.http.get('http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=7fe1ce53531d0d3549c73fdc310d0220&mbid='+id+'&format=json')
+            .map(response => response.json().results as Songs[]);
+    }
 }
