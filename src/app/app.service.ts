@@ -16,6 +16,6 @@ export class appService {
     public getSong(mbid: string) {
         const url = 'http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=7fe1ce53531d0d3549c73fdc310d0220&mbid='+mbid+'&format=json';
         return this.http.get(url)
-            .map(response => response.json().results.track.wiki as Songs);
+            .map(response => response.json().track as Songs);
     }
 }
